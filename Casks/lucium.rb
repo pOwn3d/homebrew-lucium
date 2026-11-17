@@ -1,12 +1,12 @@
+# Written by scripts/make-cask.mjs of the Lucium repository, from the published disk image and its sum.
+# Do not edit by hand: run the script again (docs/community/homebrew.md in that repository).
 cask "lucium" do
-  arch arm: "arm64"
+  version "1.1.2"
+  sha256 "bbd5d5a67761eb18e8be5957af6b8a077ab5484d9053dba48966b772e56cbe31"
 
-  version "1.0.1"
-  sha256 "3929cb2932efa16d3da30be8bc911ada1ea1640a5c9fe269c6e1f903a897b234"
-
-  url "https://lucium.app/updates/darwin-arm64/Lucium-#{version}-#{arch}.dmg"
+  url "https://lucium.app/updates/darwin-arm64/Lucium-#{version}-arm64.dmg"
   name "Lucium"
-  desc "Free web browser with a vertical sidebar and one space for each part of your life"
+  desc "Web browser with a vertical sidebar"
   homepage "https://lucium.app/"
 
   livecheck do
@@ -17,14 +17,18 @@ cask "lucium" do
   end
 
   auto_updates true
-  depends_on macos: ">= :ventura"
   depends_on arch: :arm64
+  depends_on macos: :ventura
 
   app "Lucium.app"
 
   zap trash: [
     "~/Library/Application Support/Lucium",
+    "~/Library/Caches/app.lucium.browser",
+    "~/Library/Caches/app.lucium.browser.ShipIt",
+    "~/Library/HTTPStorages/app.lucium.browser",
     "~/Library/Preferences/app.lucium.browser.plist",
+    "~/Library/Preferences/ByHost/app.lucium.browser.ShipIt.*.plist",
     "~/Library/Saved Application State/app.lucium.browser.savedState",
   ]
 end
