@@ -1,8 +1,8 @@
 # Written by scripts/make-cask.mjs of the Lucium repository, from the published disk image and its sum.
 # Do not edit by hand: run the script again (docs/community/homebrew.md in that repository).
 cask "lucium" do
-  version "1.1.6"
-  sha256 "a3445974255bd32ab21d55da677efb401d97b4266440cb9cdef283c21274f788"
+  version "1.1.7"
+  sha256 "3941a30afed4b941e69b03e5d5c7ff8cf1163f176b8ccc6f9388f86e6cbdec4a"
 
   url "https://lucium.app/updates/darwin-arm64/Lucium-#{version}-arm64.dmg"
   name "Lucium"
